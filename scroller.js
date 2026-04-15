@@ -3,11 +3,6 @@
 // Desktop: hide navbar+announcement on scroll down, show infobar sticky,
 //          restore full header on scroll up
 
-if (!header) throw new Error("No header found");
-
-let lastScrollY = window.scrollY;
-let ticking = false;
-
 function isMobile() {
   return window.innerWidth <= 767;
 }

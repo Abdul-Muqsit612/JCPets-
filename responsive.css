@@ -458,7 +458,7 @@
   header.hide-navbar .navbar,
   header.hide-all .navbar {
     max-height: 80px !important;
-    padding: 8px 16px !important;
+    padding: 18px 60px !important;
     opacity: 1 !important;
   }
   /* Never show sticky infobar on mobile */
