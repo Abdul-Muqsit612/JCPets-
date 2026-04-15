@@ -1,0 +1,1171 @@
+/* ============================================================
+   JC PETS — RESPONSIVE STYLES  (link AFTER style.css)
+   ============================================================ */
+
+/* ── MOBILE OVERLAY ── */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ============================================================
+   TABLET  768 – 1024 px
+   ============================================================ */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 106px;
+  }
+
+  /* Header adjustments */
+  .headerline {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .navbar {
+    padding: 16px 40px;
+  }
+
+  .leftmenu {
+    gap: 30px;
+  }
+
+  .navlinks {
+    gap: 40px;
+  }
+
+  .navlinks a {
+    font-size: 16px;
+  }
+
+  .rightmenu {
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .rightmenu a {
+    font-size: 14px;
+  }
+
+  .infobar {
+    padding: 10px 40px;
+  }
+
+  .infobar-items {
+    gap: 30px;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+
+  /* Banner section adjustments */
+  .banner1 {
+    padding: 60px 40px;
+    min-height: 550px;
+  }
+
+  .leftsection {
+    max-width: 450px;
+  }
+
+  .leftsection h1 {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+
+  .shopbtn {
+    padding: 15px 35px;
+    font-size: 15px;
+  }
+
+  .rightsection {
+    margin-right: -20px;
+  }
+
+  .rightsection img:not(.pets) {
+    max-height: 500px;
+    right: 0px;
+    top: 50px;
+  }
+
+  .rightsection .pets {
+    width: 280px;
+    right: 420px;
+    top: 360px;
+  }
+
+  .rightsection::after {
+    right: 120px;
+    top: 0px;
+    width: 160px;
+    height: 140px;
+  }
+
+  .paw-decoration {
+    top: 40px;
+    left: 30px;
+  }
+
+  .paw-decoration img {
+    width: 100px;
+  }
+
+  /* Categories section */
+  .categories {
+    padding: 50px 40px;
+    gap: 25px;
+  }
+
+  .category-text h1 {
+    font-size: 42px;
+  }
+
+  .category-text h2 {
+    font-size: 13px;
+  }
+
+  /* Second banner section */
+  .second-banner {
+    height: auto;
+    padding: 40px 30px;
+  }
+
+  .second-banner .container {
+    gap: 35px;
+    padding: 35px 25px;
+  }
+
+  .banner-right h1 {
+    font-size: 32px;
+  }
+
+  .banner-left img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .banner-right {
+    margin-right: 15px;
+  }
+
+  /* Products section */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .popular-products h1 {
+    font-size: 32px;
+  }
+
+  .popular-products {
+    padding: 50px 40px;
+  }
+
+  /* Banner 3 section */
+  .banner3 {
+    padding: 50px 40px;
+  }
+
+  .banner3-image img {
+    width: 380px;
+    height: 360px;
+    margin-bottom: 80px;
+  }
+
+  .banner3-content {
+    padding: 35px 25px 35px 50px;
+    height: auto;
+    min-height: 360px;
+  }
+
+  .banner3-content h1 {
+    font-size: 32px;
+    margin-left: 60px;
+  }
+
+  .banner3-content p {
+    margin-left: 60px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .read-btn {
+    margin-left: 60px;
+    padding: 15px 50px;
+  }
+
+  /* Instagram section */
+  .instagram-section {
+    padding: 45px 40px;
+  }
+
+  .instagram-section h1 {
+    font-size: 28px;
+  }
+
+  /* Subscription section */
+  .subscription {
+    padding: 35px 40px;
+  }
+
+  .content h1 {
+    font-size: 34px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+
+  /* Footer section */
+  .site-footer {
+    padding: 40px 40px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    padding: 25px 0;
+  }
+
+  .footer-copyright {
+    padding-right: 0;
+  }
+}
+
+/* ============================================================
+   SMALL TABLET  ≤ 990 px
+   ============================================================ */
+@media (max-width: 990px) {
+  body {
+    padding-top: 106px;
+  }
+
+  /* Header adjustments - show hamburger menu */
+  .headerline {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .navbar {
+    padding: 14px 30px;
+  }
+
+  .leftmenu {
+    gap: 20px;
+  }
+
+  /* Show hamburger menu */
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #1d2b39 !important;
+    border-radius: 50%;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #1d2b39;
+    padding: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  /* Hide desktop navigation */
+  .navlinks {
+    display: none !important;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  /* Right menu adjustments */
+  .rightmenu {
+    gap: 12px;
+    margin: 0;
+  }
+
+  .rightmenu a {
+    display: none;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .rightmenu .fa-magnifying-glass {
+    font-size: 18px;
+  }
+
+  .cart {
+    width: 44px;
+    height: 44px;
+  }
+
+  .infobar {
+    padding: 8px 30px;
+  }
+
+  .infobar-items {
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .info {
+    font-size: 8px;
+    gap: 2px;
+  }
+
+  /* Banner section - keep desktop layout but adjust sizing */
+  .banner1 {
+    padding: 50px 30px;
+    min-height: 500px;
+  }
+
+  .leftsection {
+    max-width: 400px;
+  }
+
+  .leftsection h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .shopbtn {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+
+  .rightsection {
+    margin-right: -15px;
+  }
+
+  .rightsection img:not(.pets) {
+    max-height: 450px;
+    right: 0px;
+    top: 40px;
+  }
+
+  .rightsection .pets {
+    width: 250px;
+    right: 380px;
+    top: 320px;
+  }
+
+  .rightsection::after {
+    right: 100px;
+    top: -5px;
+    width: 140px;
+    height: 120px;
+  }
+
+  .paw-decoration {
+    top: 30px;
+    left: 20px;
+  }
+
+  .paw-decoration img {
+    width: 90px;
+  }
+
+  /* Categories section */
+  .categories {
+    padding: 40px 30px;
+    gap: 20px;
+  }
+
+  .category-text h1 {
+    font-size: 38px;
+  }
+
+  /* Other sections adjustments */
+  .second-banner {
+    padding: 35px 25px;
+  }
+
+  .popular-products {
+    padding: 45px 30px;
+  }
+
+  .banner3 {
+    padding: 45px 30px;
+  }
+
+  .instagram-section {
+    padding: 40px 30px;
+  }
+
+  .subscription {
+    padding: 30px 25px;
+  }
+
+  .site-footer {
+    padding: 35px 30px 0;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 767 px
+   ============================================================ */
+@media (max-width: 767px) {
+  /* body offset = red bar (~44px) + navbar (~56px) */
+  body {
+    padding-top: 100px;
+  }
+
+  /* ── HEADER ── */
+  /* Always show full header on mobile — override scroll-hide JS classes */
+  header.hide-navbar .headerline,
+  header.hide-all .headerline {
+    max-height: 44px !important;
+    padding: 10px 16px !important;
+    opacity: 1 !important;
+  }
+  header.hide-navbar .navbar,
+  header.hide-all .navbar {
+    max-height: 80px !important;
+    padding: 8px 16px !important;
+    opacity: 1 !important;
+  }
+  /* Never show sticky infobar on mobile */
+  header.hide-navbar .infobar {
+    position: static !important;
+    box-shadow: none !important;
+  }
+
+  /* Disable all transition animation on mobile header */
+  header .headerline,
+  header .navbar,
+  header .infobar {
+    transition: none !important;
+  }
+
+  /* Announcement bar */
+  .headerline {
+    font-size: 12px;
+    padding: 10px 16px;
+    max-height: none;
+    line-height: 1.4;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 8px 16px;
+    max-height: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .leftmenu {
+    gap: 12px;
+    margin-left: -40px;
+  }
+
+  /* Hamburger button — circular border */
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #1d2b39 !important;
+    border-radius: 50%;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #1d2b39;
+    padding: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  /* Hide desktop nav */
+  .navlinks {
+    display: none !important;
+  }
+
+  /* Right menu — only search + cart */
+  .rightmenu {
+    gap: 10px;
+    margin-left: 10px;
+  }
+  .rightmenu a {
+    display: none;
+  }
+  .user {
+    display: none;
+  }
+  .rightmenu .fa-magnifying-glass {
+    font-size: 18px;
+  }
+  .cart {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Hide infobar entirely on mobile */
+  .infobar {
+    display: none !important;
+  }
+  header.hide-navbar .infobar {
+    display: none !important;
+  }
+
+  /* ── HERO ── */
+  /* ── HERO ── */
+  .banner1 {
+    flex-direction: column;
+    padding: 30px 24px 0;
+    min-height: auto;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .leftsection {
+    max-width: 100%;
+    margin-bottom: 0;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .leftsection h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  /* Hide subtitle on mobile */
+  .subtitle {
+    display: none !important;
+  }
+
+  .shopbtn {
+    padding: 14px 36px;
+    font-size: 15px;
+    border-radius: 30px;
+  }
+
+  /* Right section sits BELOW the text */
+  .rightsection {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 280px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 0 !important;
+  }
+
+  .rightsection img:not(.pets) {
+    position: relative;
+    max-height: 280px;
+    right: auto;
+    top: auto;
+    width: auto;
+  }
+
+  .rightsection .pets {
+    position: absolute;
+    width: 151px;
+    right: 146px;
+    top: 108px;
+  }
+
+  .rightsection::after {
+    right: 20px;
+    top: 82px;
+    width: 90px;
+    height: 80px;
+  }
+
+  .paw-decoration {
+    top: 16px;
+    left: 12px;
+    z-index: 3;
+  }
+  .paw-decoration img {
+    width: 70px;
+  }
+  /* ── CATEGORIES ── */
+  .categories {
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .category-card {
+    height: 170px;
+    border-radius: 16px;
+  }
+
+  .category-text h1 {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+  .category-text h2 {
+    font-size: 13px;
+  }
+
+  .view-btn {
+    padding: 11px 22px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .dogimg,
+  .catimg {
+    height: 180px;
+    width: 160px;
+    right: 10px;
+  }
+  .circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* ── SECOND BANNER ── */
+  .second-banner {
+    height: auto;
+    padding: 20px 16px;
+  }
+
+  .second-banner .container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 20px;
+    align-items: center;
+  }
+
+  .banner-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .banner-left img {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  .banner-right {
+    max-width: 100%;
+    margin-right: 0;
+    text-align: left;
+  }
+  .banner-right h1 {
+    font-size: 28px;
+  }
+  .features li {
+    font-size: 14px;
+  }
+  .new-price {
+    font-size: 22px;
+  }
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+
+  /* ── PRODUCTS ── */
+  .popular-products {
+    padding: 40px 16px;
+  }
+  .popular-products h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card {
+    min-height: auto;
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+
+  .image-wrapper {
+    height: 160px;
+  }
+  .image-wrapper img {
+    height: 130px;
+    width: 110px;
+  }
+
+  .product-card h2 {
+    font-size: 14px;
+    margin: 10px 0 8px;
+  }
+  .product-card ul li {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .product-card ul {
+    margin-bottom: 8px;
+  }
+
+  .price .new {
+    font-size: 15px;
+  }
+  .price .old {
+    font-size: 12px;
+  }
+
+  .rating {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .rating span {
+    font-size: 11px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .product-card button {
+    padding: 11px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  /* ── BANNER 3 ── */
+  .banner3 {
+    padding: 30px 16px;
+  }
+  .banner3-container {
+    flex-direction: column;
+  }
+
+  .banner3-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-bottom: 0;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .banner3-content {
+    margin-left: 0;
+    border-radius: 0 0 14px 14px;
+    padding: 28px 22px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .banner3-content h1 {
+    font-size: 24px;
+    margin-left: 0;
+    margin-bottom: 14px;
+  }
+  .banner3-content p {
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .read-btn {
+    margin-left: 0;
+    margin-top: 18px;
+    padding: 14px 40px;
+    width: 100%;
+  }
+
+  /* ── INSTAGRAM ── */
+  /* ── INSTAGRAM SLIDER — always 3 cards ── */
+
+  .instagram-section {
+    padding: 40px 8px; /* reduce side padding so arrows have room */
+  }
+
+  .ig-wrapper {
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    gap: 6px;
+  }
+
+  .ig-viewport {
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ig-track {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.35s ease;
+    will-change: transform;
+  }
+
+  .ig-card {
+    flex: 0 0 calc((100% - 24px) / 3);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+  }
+
+  .ig-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ig-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .ig-card:hover .ig-overlay {
+    opacity: 1;
+  }
+
+  /* Hide dots */
+  .ig-dots {
+    display: none !important;
+  }
+
+  #prevBtn {
+    left: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+  #nextBtn {
+    right: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+  .arrow-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 28px;
+  }
+
+  /* ── SUBSCRIPTION ── */
+  .subscription {
+    padding: 20px 16px;
+  }
+  .banner5-container {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+  }
+  .left-paw,
+  .right-paw {
+    display: none;
+  }
+  .content h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .content p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .form input {
+    width: 100%;
+    padding: 12px 14px;
+  }
+  .form button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* ── FOOTER — accordion ── */
+  .site-footer {
+    padding: 24px 16px 0;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  /* Brand block */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    grid-column: auto;
+  }
+
+  .footer-logo-img {
+    width: 130px;
+    margin-bottom: 10px;
+  }
+  .trustpilot {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* Nav columns — accordion */
+  .footer-nav {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .footer-nav .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 4px;
+    cursor: pointer;
+    font-family: "Grandstander", cursive;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    user-select: none;
+  }
+
+  .footer-nav .accordion-header .acc-icon {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e74c3c;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .footer-nav.acc-open .accordion-header .acc-icon {
+    transform: rotate(180deg);
+  }
+
+  .footer-nav ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 4px;
+  }
+
+  .footer-nav.acc-open ul {
+    max-height: 400px;
+    padding-bottom: 14px;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 14px;
+  }
+  .footer-nav ul li a {
+    font-size: 14px;
+  }
+
+  /* Contact — accordion */
+  .footer-contact {
+    border-bottom: 1px solid #e5e5e5;
+    grid-column: auto;
+  }
+
+  .footer-contact .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 4px;
+    cursor: pointer;
+    font-family: "Grandstander", cursive;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    user-select: none;
+  }
+
+  .footer-contact .accordion-header .acc-icon {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e74c3c;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .footer-contact.acc-open .accordion-header .acc-icon {
+    transform: rotate(180deg);
+  }
+
+  .footer-contact .contact-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 4px;
+  }
+
+  .footer-contact.acc-open .contact-body {
+    max-height: 500px;
+    padding-bottom: 14px;
+  }
+
+  /* The always-visible h3 title hides — replaced by accordion header */
+  .footer-contact > h3 {
+    display: none;
+  }
+
+  /* Payment row */
+  .payment-row {
+    gap: 6px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 0;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .footer-copyright {
+    padding-right: 0;
+  }
+
+  /* ── FLOATING ── */
+  .floating-left {
+    width: 72px;
+    height: 72px;
+    left: 16px;
+    bottom: 20px;
+    padding: 14px;
+  }
+  .discount-text {
+    font-size: 18px;
+  }
+  .discount-label {
+    font-size: 11px;
+  }
+  .floating-right {
+    right: 16px;
+    bottom: 70px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  /* Kill scroll animations on mobile */
+  .info-item-1,
+  .info-item-2,
+  .info-item-3,
+  .info-item-4 {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE  ≤ 480 px
+   ============================================================ */
+@media (max-width: 480px) {
+  body {
+    padding-top: 100px;
+  }
+  .headerline {
+    font-size: 11px;
+  }
+  .leftsection h1 {
+    font-size: 1.75rem;
+  }
+  .ig-card {
+    flex: 0 0 calc((100% - 24px) / 3);
+  }
+  .ig-track {
+    gap: 12px;
+  }
+  .category-card {
+    height: 155px;
+  }
+  .category-text h1 {
+    font-size: 30px;
+  }
+  .dogimg,
+  .catimg {
+    height: 165px;
+    width: 145px;
+    right: 8px;
+  }
+  .circle {
+    width: 125px;
+    height: 125px;
+  }
+}
