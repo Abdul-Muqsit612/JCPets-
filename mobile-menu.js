@@ -27,18 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".sidebar-link")
     .forEach((link) => link.addEventListener("click", closeSidebar));
 });
-/* ── FOOTER ACCORDION (mobile only) ── */
-function initFooterAccordions() {
-  if (window.innerWidth > 767) return;
 
-  /* ── Nav columns: wrap existing <ul> with accordion header ── */
+/* ── FOOTER ACCORDION (≤480px only) ── */
+function initFooterAccordions() {
+  // FIX: Only run accordion logic at ≤480px, not at 481–767px
+  if (window.innerWidth > 480) return;
+
+  /* ── Nav columns ── */
   document.querySelectorAll(".footer-nav").forEach((nav, idx) => {
-    if (nav.querySelector(".accordion-header")) return; // already done
+    if (nav.querySelector(".accordion-header")) return; // already initialised
 
     const ul = nav.querySelector("ul");
     if (!ul) return;
 
-    // Determine label from first link text or fallback
     const label = idx === 0 ? "Links" : "More links";
 
     const header = document.createElement("div");
@@ -48,8 +49,12 @@ function initFooterAccordions() {
 
     nav.insertBefore(header, ul);
 
+    // Start closed
+    nav.classList.add("acc-closed");
+
     header.addEventListener("click", () => {
       nav.classList.toggle("acc-open");
+      nav.classList.toggle("acc-closed");
     });
   });
 
@@ -59,11 +64,10 @@ function initFooterAccordions() {
     const originalH3 = contact.querySelector("h3");
     const label = originalH3 ? originalH3.textContent : "Our contact details";
 
-    // Wrap everything except the h3 in a .contact-body div
+    // Wrap all children except h3 into a .contact-body div
     const body = document.createElement("div");
     body.className = "contact-body";
 
-    // Move all children except the h3 into body
     Array.from(contact.children).forEach((child) => {
       if (child.tagName !== "H3") body.appendChild(child);
     });
@@ -76,8 +80,12 @@ function initFooterAccordions() {
     contact.appendChild(header);
     contact.appendChild(body);
 
+    // Start closed
+    contact.classList.add("acc-closed");
+
     header.addEventListener("click", () => {
       contact.classList.toggle("acc-open");
+      contact.classList.toggle("acc-closed");
     });
   }
 }
@@ -85,17 +93,38 @@ function initFooterAccordions() {
 // Run on load
 initFooterAccordions();
 
-// Re-init if window resizes into mobile range
+// Re-run only when crossing the 480px boundary
 let lastWidth = window.innerWidth;
 window.addEventListener("resize", () => {
-  if (window.innerWidth !== lastWidth) {
-    lastWidth = window.innerWidth;
-    if (window.innerWidth <= 767) initFooterAccordions();
+  if (window.innerWidth === lastWidth) return;
+  lastWidth = window.innerWidth;
+
+  if (window.innerWidth <= 480) {
+    initFooterAccordions();
+  } else {
+    // FIX: Tear down accordion when resizing above 480px
+    // so desktop/tablet layout is clean
+    document.querySelectorAll(".footer-nav").forEach((nav) => {
+      const accHeader = nav.querySelector(".accordion-header");
+      if (accHeader) accHeader.remove();
+      nav.classList.remove("acc-open", "acc-closed");
+    });
+
+    const contact = document.querySelector(".footer-contact");
+    if (contact) {
+      const accHeader = contact.querySelector(".accordion-header");
+      if (accHeader) accHeader.remove();
+
+      // Move contact-body children back out
+      const body = contact.querySelector(".contact-body");
+      if (body) {
+        Array.from(body.children).forEach((child) =>
+          contact.appendChild(child),
+        );
+        body.remove();
+      }
+
+      contact.classList.remove("acc-open", "acc-closed");
+    }
   }
 });
-
-/* ── SCROLL BEHAVIOUR ── */
-// On mobile: header always stays fully visible
-// On desktop: existing scroller.js handles show/hide classes
-
-// Patch: if scroller.js adds hide classes on mobile, strip them

@@ -1,8 +1,7 @@
 /* ── SCROLL HEADER BEHAVIOUR ── */
-// Mobile (≤768px): header hides/shows smoothly on scroll
-// Small Mobile (≤480px): navbar hides on scroll down, shows on scroll up, infobar always hidden
-// Desktop: hide navbar+announcement on scroll down, show infobar sticky,
-//          restore full header on scroll up
+// ≤480px  : entire header slides up/down via CSS transform (hardware-accelerated)
+// ≤768px  : entire header hides/shows via hide-all class
+// Desktop : hide navbar+announcement bar on scroll down, restore on scroll up
 
 const header = document.querySelector("header");
 if (!header) throw new Error("No header found");
@@ -10,12 +9,12 @@ if (!header) throw new Error("No header found");
 let lastScrollY = window.scrollY;
 let ticking = false;
 
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
 function isSmallMobile() {
   return window.innerWidth <= 480;
+}
+
+function isMobile() {
+  return window.innerWidth <= 768;
 }
 
 function updateHeader() {
@@ -23,47 +22,39 @@ function updateHeader() {
   const scrollingDown = currentScrollY > lastScrollY;
 
   if (isSmallMobile()) {
-    // Small mobile behavior: hide navbar on scroll down, show on scroll up, infobar always hidden
-    if (currentScrollY < 15) {
-      // At top — show navbar, hide infobar
+    // FIX: Use the same class logic as mobile but rely on the
+    // transform: translateY(-100%) defined in CSS for header.hide-all
+    // at this breakpoint — do NOT fight it with display:none on children.
+    if (currentScrollY <= 5) {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
-    } else if (scrollingDown && currentScrollY > 25) {
-      // Scrolling down — hide navbar
-      header.classList.remove("show");
-      header.classList.add("hide-navbar");
-    } else if (!scrollingDown && currentScrollY > 15) {
-      // Scrolling up — show navbar
+    } else if (scrollingDown) {
+      header.classList.remove("show", "hide-navbar");
+      header.classList.add("hide-all");
+    } else {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
     }
   } else if (isMobile()) {
-    // Regular mobile behavior: hide entire header on scroll down
-    if (currentScrollY < 15) {
-      // At top — show everything
+    if (currentScrollY <= 5) {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
-    } else if (scrollingDown && currentScrollY > 25) {
-      // Scrolling down — hide entire header completely
+    } else if (scrollingDown) {
       header.classList.remove("show", "hide-navbar");
       header.classList.add("hide-all");
-    } else if (!scrollingDown && currentScrollY > 15) {
-      // Scrolling up — show entire header
+    } else {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
     }
   } else {
-    // Desktop behavior (unchanged)
-    if (currentScrollY < 10) {
-      // At top — show everything
+    // Desktop
+    if (currentScrollY <= 5) {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
-    } else if (scrollingDown && currentScrollY > 80) {
-      // Scrolling down — hide navbar & announcement, keep infobar sticky
+    } else if (scrollingDown) {
       header.classList.remove("show", "hide-all");
       header.classList.add("hide-navbar");
-    } else if (!scrollingDown) {
-      // Scrolling up — restore full header
+    } else {
       header.classList.remove("hide-navbar", "hide-all");
       header.classList.add("show");
     }
@@ -84,5 +75,5 @@ window.addEventListener(
   { passive: true },
 );
 
-// Initialize header
+// Initialise
 header.classList.add("show");
