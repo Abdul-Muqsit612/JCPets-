@@ -24,7 +24,7 @@
   <body>
     <header>
       <!-- Top announcement bar -->
-      <div class="headerline">
+      <div class="headerline" style="height: 30px; font-weight: 500">
         Free shipping throughout the Netherlands & Belgium from €20 + Ordered
         today = Delivered tomorrow! 🐶🐱
       </div>
@@ -237,10 +237,21 @@
     <section class="second-banner">
       <div class="container">
         <div class="banner-left">
-          <img
-            src="./Assets/secondbanner.jpg"
-            alt="Wireless Drinking Fountain"
-          />
+          <div class="img-zoom-wrapper">
+            <img
+              src="./Assets/secondbanner.jpg"
+              alt="Wireless Drinking Fountain"
+            />
+            <div class="magnifyingglass">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </div>
+          <div class="lightbox-overlay" id="lightboxOverlay">
+            <img
+              src="./Assets/secondbanner.jpg"
+              alt="Wireless Drinking Fountain Zoomed"
+            />
+          </div>
         </div>
 
         <div class="banner-right">
@@ -391,9 +402,11 @@
             At JC Pets, we are committed to making your pet adventure as
             seamless and carefree as possible. We understand the excitement that
             comes with embarking on this journey—welcoming a new pet into your
-            life is a moment of pure joy and excitement.At the same time, we are
-            fully aware of the challenges and responsibilities this journey
-            entails. That is why we are here to guide you every step of the way.
+            life is a moment of pure joy and excitement. At the same time, we
+            are fully aware of the challenges and responsibilities this journey
+            entails. That is why we are here to guide you every step of the way,
+            ensuring you are not only well-prepared but can also enjoy this
+            wonderful journey with full confidence.
           </p>
 
           <button class="read-btn">Read more</button>
@@ -646,6 +659,7 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Shipping &amp; Return Policy</a>
         </div>
+        <div class="footercopyright"></div>
         <span class="footer-copyright">© 2026, JC Pets NL</span>
       </div>
     </footer>
@@ -666,7 +680,7 @@
         <i class="fa-brands fa-whatsapp"></i>
       </a>
     </div>
-
+    <script src="viewimage.js"></script>
     <script src="slider.js"></script>
     <script src="scroller.js"></script>
     <script src="mobile-menu.js"></script>

@@ -1,8 +1,3 @@
-/* ============================================================
-   JC PETS — RESPONSIVE STYLES  (link AFTER style.css)
-   ============================================================ */
-
-/* ── MOBILE OVERLAY ── */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -48,10 +43,25 @@
   }
 
   .rightmenu {
-    gap: 12px;
+    gap: 8px;
     margin-top: 40px;
   }
-
+  .rightmenu a {
+    flex-wrap: nowrap;
+    font-size: 15px;
+  }
+  .fa-magnifying-glass {
+    margin-bottom: 40px;
+    margin-left: 12px;
+  }
+  .user {
+    margin-bottom: 40px;
+    margin-left: 12px;
+  }
+  .cart {
+    margin-bottom: 40px;
+    margin-left: 12px;
+  }
   .rightmenu a {
     font-size: 14px;
   }
@@ -72,6 +82,7 @@
   .banner1 {
     padding: 60px 40px;
     min-height: 550px;
+    height: 780px;
   }
 
   .leftsection {
@@ -79,18 +90,22 @@
   }
 
   .leftsection h1 {
-    font-size: 2.2rem;
+    font-size: 3.5rem;
     line-height: 1.15;
+    margin-left: -27px;
   }
 
   .subtitle {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     margin-bottom: 35px;
+    flex-wrap: wrap;
+    margin-left: -27px;
   }
 
   .shopbtn {
-    padding: 15px 35px;
-    font-size: 15px;
+    padding: 18px 35px;
+    font-size: 18px;
+    margin-left: -30px;
   }
 
   .rightsection {
@@ -99,21 +114,21 @@
 
   .rightsection img:not(.pets) {
     max-height: 500px;
-    right: 0px;
-    top: 50px;
+    right: -50px;
+    top: 120px;
   }
 
   .rightsection .pets {
-    width: 280px;
-    right: 420px;
+    width: 317px;
+    right: 319px;
     top: 360px;
   }
 
   .rightsection::after {
-    right: 120px;
-    top: 0px;
-    width: 160px;
-    height: 140px;
+    right: 80px;
+    top: -60px;
+    width: 203px;
+    height: 175px;
   }
 
   .paw-decoration {
@@ -165,98 +180,91 @@
 
   /* Products section */
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-
-  .popular-products h1 {
-    font-size: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* tighter gap so cards fit */
   }
 
   .popular-products {
-    padding: 50px 40px;
+    padding: 60px 20px; /* less side padding to give cards more room */
   }
 
-  /* Banner 3 section */
-  .banner3 {
-    padding: 50px 40px;
+  .product-card {
+    padding: 16px; /* reduce inner padding on smaller screens */
+    min-height: auto; /* let height be natural */
   }
+}
 
-  .banner3-image img {
-    width: 380px;
-    height: 360px;
-    margin-bottom: 80px;
-  }
+.popular-products h1 {
+  font-size: 50px;
+}
 
-  .banner3-content {
-    padding: 35px 25px 35px 50px;
-    height: auto;
-    min-height: 360px;
-  }
+/* Banner 3 section */
+.banner3 {
+  padding: 50px 40px;
+}
 
-  .banner3-content h1 {
-    font-size: 32px;
-    margin-left: 60px;
-  }
+.banner3-image img {
+  width: 486px;
+  height: 808px;
+  margin-bottom: 170px;
+}
 
-  .banner3-content p {
-    margin-left: 60px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
+.banner3-content {
+  padding: 35px 25px 35px 50px;
+  height: auto;
+  min-height: 360px;
+}
 
-  .read-btn {
-    margin-left: 60px;
-    padding: 15px 50px;
-  }
+.banner3-content h1 {
+  font-size: 50px;
+  margin-left: 255px;
+}
 
-  /* Instagram section */
-  .instagram-section {
-    padding: 45px 40px;
-  }
+.banner3-content p {
+  margin-left: 242px;
+  font-size: 16px;
+  line-height: 2;
+}
 
-  .instagram-section h1 {
-    font-size: 28px;
-  }
+.read-btn {
+  margin-left: 240px;
+  padding: 19px 81px;
+}
 
-  /* Subscription section */
-  .subscription {
-    padding: 35px 40px;
-  }
+/* Instagram section */
+.instagram-section {
+  padding: 0px 40px;
+  margin-top: -52px;
+}
 
-  .content h1 {
-    font-size: 34px;
-  }
+.instagram-section h1 {
+  font-size: 50px;
+}
 
-  .content p {
-    font-size: 15px;
-  }
+/* Subscription section */
+.subscription {
+  padding: 35px 40px;
+}
 
-  /* Footer section */
-  .site-footer {
-    padding: 40px 40px 0;
-  }
+.content h1 {
+  font-size: 34px;
+}
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
+.content p {
+  font-size: 15px;
+}
 
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
+/* Footer section */
+.site-footer {
+  padding: 40px 40px 0;
+}
 
-  .footer-contact {
-    grid-column: 1 / -1;
-  }
+.footer-bottom {
+  padding: 25px 0;
+}
 
-  .footer-bottom {
-    padding: 25px 0;
-  }
-
-  .footer-copyright {
-    padding-right: 0;
-  }
+.footer-copyright {
+  padding-right: 0;
 }
 
 /* ============================================================
@@ -441,7 +449,7 @@
 /* ============================================================
    MOBILE  ≤ 767 px
    ============================================================ */
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   /* body offset = red bar (~44px) + navbar (~56px) */
   body {
     padding-top: 100px;
@@ -510,10 +518,13 @@
     padding: 0;
     margin-right: 0;
     flex-shrink: 0;
+    font-family: "Grandstander", cursive;
+    font-weight: 200;
   }
 
   .logo img {
     height: 28px;
+    margin-left: 230px;
   }
 
   /* Hide desktop nav */
@@ -531,13 +542,16 @@
   }
   .user {
     display: none;
+    margin: 0;
   }
   .rightmenu .fa-magnifying-glass {
     font-size: 18px;
+    margin: 0;
   }
   .cart {
     width: 44px;
     height: 44px;
+    margin: 0;
   }
 
   /* Hide infobar entirely on mobile */
