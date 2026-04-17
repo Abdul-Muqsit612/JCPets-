@@ -1334,34 +1334,507 @@
    ============================================================ */
 @media (max-width: 480px) {
   body {
-    padding-top: 100px;
+    padding-top: 70px; /* Reduced since infobar is hidden */
   }
-  .headerline {
-    font-size: 11px;
+
+  /* ── HEADER & NAVBAR ── */
+
+  /* ── HEADER ── */
+  /* Enable smooth header hide/show on mobile */
+  .navbar {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
   }
+
+  .leftmenu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-left: 0;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #1d2b39 !important;
+    border-radius: 50%;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #1d2b39;
+    padding: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
+  /* Center logo using absolute positioning */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo img {
+    height: 28px;
+    margin-left: 0; /* remove the old 230px hack */
+  }
+
+  .navlinks {
+    display: none !important;
+  }
+
+  .rightmenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .rightmenu a {
+    display: none;
+  }
+
+  .user {
+    display: none !important;
+  }
+
+  .rightmenu .fa-magnifying-glass {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .cart {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+  header.show .headerline {
+    max-height: 44px;
+    padding: 10px 16px;
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 7px;
+    display: block !important;
+  }
+  header.show .infobar {
+    display: none !important;
+  }
+  /* ── BANNER1 — Mobile First Layout ── */
+  .banner1 {
+    padding: 40px 16px;
+    min-height: auto;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .leftsection {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reviews {
+    font-size: 12px;
+    margin-left: 0;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
   .leftsection h1 {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
   }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    margin-left: 0;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  .shopbtn {
+    padding: 16px 32px;
+    font-size: 16px;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  /* Hide or minimize right section for mobile-first approach */
+  .rightsection {
+    display: block;
+  }
+
+  /* Alternative: Show pets below content */
+  .rightsection.show-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0 0;
+    position: relative;
+  }
+
+  .rightsection img:not(.pets) {
+    max-height: 360px;
+    right: 50px;
+    top: 57px;
+  }
+
+  .rightsection .pets {
+    width: 200px;
+
+    right: 280px;
+    top: 220px;
+
+    bottom: 20px;
+  }
+
+  .rightsection::after {
+    right: 40px;
+    top: 141px;
+    width: 99px;
+    height: 90px;
+  }
+
+  .paw-decoration {
+    top: 20px;
+    left: 16px;
+  }
+
+  .paw-decoration img {
+    width: 80px;
+  }
+
+  /* ── OTHER SECTIONS ── */
   .ig-card {
     flex: 0 0 calc((100% - 24px) / 3);
   }
+
   .ig-track {
     gap: 12px;
   }
+  .instagram-section {
+    margin-top: 20px;
+  }
+  .instagram-section h1 {
+    font-size: 30px;
+  }
+  .categories {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .category-card {
+    flex: none;
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+
+  .category-text h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .category-text h2 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .view-btn {
+    padding: 12px 22px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .dogimg,
+  .catimg {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 180px;
+    width: 160px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #d7d5d3;
+    top: 60px;
+    left: 42px;
+  }
+
+  .dogimg img {
+    height: 84%;
+    bottom: -7px;
+    left: 22px;
+  }
+
+  .catimg img {
+    height: 84%;
+    bottom: -7px;
+    left: 22px;
+  }
+
   .category-card {
     height: 155px;
   }
+
   .category-text h1 {
     font-size: 30px;
   }
+
   .dogimg,
   .catimg {
     height: 165px;
     width: 145px;
     right: 8px;
   }
-  .circle {
-    width: 125px;
-    height: 125px;
+  .second-banner {
+    height: auto;
+    padding: 16px;
+  }
+
+  .second-banner .container {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    align-items: stretch;
+  }
+
+  /* IMAGE ON TOP */
+  .banner-left {
+    width: 100%;
+  }
+
+  .img-zoom-wrapper {
+    width: 100%;
+    height: 260px;
+    border-radius: 0;
+  }
+
+  .img-zoom-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .magnifyingglass {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  /* CONTENT BELOW */
+  .banner-right {
+    width: 100%;
+    margin-right: 0;
+    padding: 24px 20px 28px;
+  }
+
+  .banner-right h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .features {
+    margin-bottom: 0;
+  }
+
+  .features li {
+    font-size: 15px;
+    padding-top: 12px;
+    gap: 10px;
+  }
+
+  .features li i {
+    font-size: 18px;
+  }
+
+  /* PRICE */
+  .second-banner .price {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .new-price {
+    font-size: 28px;
+  }
+
+  .old-price {
+    font-size: 18px;
+  }
+
+  /* BUTTON — full width */
+  .btn {
+    width: 100%;
+    font-size: 17px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .banner3 {
+    padding: 20px 16px;
+    display: block;
+  }
+
+  .banner3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: static;
+    gap: 0;
+  }
+
+  .banner3-image {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    position: static;
+    z-index: auto;
+  }
+
+  .banner3-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+  }
+
+  .banner3-content {
+    width: 100%;
+    height: auto;
+    margin-left: 0; /* removes the desktop -180px overlap */
+    border-radius: 0 0 15px 15px;
+    padding: 28px 20px 32px;
+    z-index: auto;
+    position: static;
+  }
+
+  .banner3-content h1 {
+    font-size: 26px;
+    margin-left: 0;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .banner3-content p {
+    font-size: 14px;
+    margin-left: 0;
+    line-height: 1.6;
+  }
+
+  .read-btn {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 14px 40px;
+    display: block;
+    width: fit-content;
+  }
+  .subscription {
+    padding: 16px;
+  }
+
+  .banner5-container {
+    grid-template-columns: 1fr;
+    padding: 32px 20px 24px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Show paws as watermarks */
+  .left-paw,
+  .right-paw {
+    display: block !important;
+    position: absolute;
+    opacity: 0.12;
+  }
+
+  .left-paw {
+    top: 10px;
+    left: 10px;
+  }
+
+  .right-paw {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .paw img {
+    width: 90px;
+  }
+
+  .content {
+    grid-column: 1;
+    padding: 0;
+  }
+
+  .content h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .content p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* Stack input + button vertically */
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .form input {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    padding: 16px 18px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .form button {
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 13px;
+    border-radius: 12px;
+    line-height: 1.2;
   }
 }
